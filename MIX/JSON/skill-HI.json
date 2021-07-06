@@ -1,0 +1,273 @@
+{
+  "intents": [
+    {
+      "intent": "HI",
+      "examples": [
+        {
+          "text": "bro"
+        },
+        {
+          "text": "broom"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "HI"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "HOW",
+      "examples": [
+        {
+          "text": "How do I control"
+        },
+        {
+          "text": "How do I control?"
+        },
+        {
+          "text": "How it works"
+        },
+        {
+          "text": "What moves the robot"
+        },
+        {
+          "text": "What moves the robot?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "page",
+      "examples": [
+        {
+          "text": "How was this page made"
+        },
+        {
+          "text": "How was this page made?"
+        },
+        {
+          "text": "What is this page made of"
+        },
+        {
+          "text": "What is this page made of?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "question",
+      "examples": [
+        {
+          "text": "How does this page work"
+        },
+        {
+          "text": "How does this page work?"
+        },
+        {
+          "text": "What is the use of this page?"
+        },
+        {
+          "text": "What is this page"
+        },
+        {
+          "text": "What is this page?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "work",
+      "examples": [
+        {
+          "text": "From the programmer of the page"
+        },
+        {
+          "text": "Who did this?"
+        },
+        {
+          "text": "Who made the page"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1625544020465",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "HI",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello , how can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#HI",
+      "dialog_node": "node_2_1625544020465",
+      "previous_sibling": "node_5_1625544448077"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is the robot control page through which you can move the robot and move its arm"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#question",
+      "dialog_node": "node_5_1625544448077",
+      "previous_sibling": "node_5_1625544766383"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Through the slider, you can control how far the pieces move in the arm, and through the side buttons, you can control the base of the arm"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#HOW",
+      "dialog_node": "node_5_1625544766383",
+      "previous_sibling": "node_7_1625544936409"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This page was created in the following languages (Javascript, PHP, HTML, CSS) and this chat bot was created by IBM"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#page",
+      "dialog_node": "node_7_1625544936409",
+      "previous_sibling": "node_9_1625545156428"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Done by Abdullah Al Roqi\nGraduated from Umm Al-Qura University, Department of Computer Science"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#work",
+      "dialog_node": "node_9_1625545156428",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "HI",
+  "language": "en",
+  "description": ""
+}

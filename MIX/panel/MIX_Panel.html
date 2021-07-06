@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Control panel</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+</head>
+
+<link rel="stylesheet" href="style_MAX.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+ 
+<body>
+
+<ul class="ti">
+<h1 style="text-align: center;">Control Panel</h1> 
+</ul>
+<form action="acc_start.php" method="post" style="margin-left: 30%;">
+
+<ul class="arm">
+<div class="w3-container">
+
+
+	<h3>Turn on and off</h3>
+<p>
+  <button class="w3-btn w3-ripple w3-grayscale" style="margin-left: 20px;"   name="on">On</button>
+  <button class="w3-btn w3-ripple w3-grayscale"style="margin-left: 20px;"   name="off">Off</button>
+
+</p>
+</div>
+</ul>
+<br><br> 
+</form>
+ 
+<form action="acc_stand.php" method="post" style="margin-top: 1%;margin-left: 200px;">
+
+ 
+	<div class="w3-container">
+
+
+<p >
+  <button class="w3-btn w3-ripple w3-black"  style="margin-left:20px;  width: 200px;"   name="UP">up</button>
+
+</p>
+
+
+
+<br>
+
+<p>
+
+ <button class="w3-btn w3-ripple w3-black"     style="margin-left:-10px; width: 110px;" name="LE">left</button> 
+
+  <button class="w3-btn w3-ripple w3-black" style="margin-left:25px; width: 110px; "    name="RI">right</button>
+
+
+</p>
+<br>
+
+	
+<p >
+  <button class="w3-btn w3-ripple w3-black"  style="margin-left:20px; width: 200px; "   name="DO">Down</button>
+
+</p>
+
+</div>
+</form>
+ 
+<ul class="arm">
+<form action="acc_panel.php" method="post" style="margin-top: -22%; margin-right: 450px; " class="form">
+
+	<label for="range1">MOTOR 1</label>
+	<input id="range1" name="range1" type="range" min="0" max="180" value="0">
+	<label for="range2">MOTOR 2</label>
+	<input id="range2" name="range2" type="range" min="0" max="180" value="0">
+	<label for="range3">MOTOR 3</label>
+	<input id="range3" name="range3" type="range" min="0" max="180" value="0">
+	<label for="range4">MOTOR 4</label>
+	<input id="range4" name="range4" type="range" min="0" max="180" value="0">
+	<label for="range5">MOTOR 5</label>
+	<input id="range5" name="range5" type="range" min="0" max="180" value="0">
+	<label for="range6">MOTOR 6</label>
+	<input id="range6" name="range6" type="range" min="0" max="180" value="0">
+	<br><br>
+    
+	<div class="w3-container">
+
+
+<p>
+  <button class="w3-btn w3-ripple w3-blue" style=" margin-left: 50px;"  name="Send">Send</button>
+
+</p>
+</ul>
+
+
+
+</div>
+
+</form>
+
+
+
+ <script src="script.js"></script> 
+ 
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "eebcca25-a6ec-4746-bdb3-4d4556f4dca6", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "0c27d8a6-a53f-46be-9c6d-8f11293badd9", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+ 
+</body>
+</html>
